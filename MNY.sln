@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MNY", "MNY\MNY.csproj", "{B50AEE2C-561A-48C1-9720-E4150C5A586F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{43713D8F-7729-4641-9D0A-DFB3211890A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazore.Core", "Blazore.Core\Blazore.Core.csproj", "{91124504-2D76-494F-8E84-14E2DEC784C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B50AEE2C-561A-48C1-9720-E4150C5A586F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B50AEE2C-561A-48C1-9720-E4150C5A586F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B50AEE2C-561A-48C1-9720-E4150C5A586F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B50AEE2C-561A-48C1-9720-E4150C5A586F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91124504-2D76-494F-8E84-14E2DEC784C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91124504-2D76-494F-8E84-14E2DEC784C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91124504-2D76-494F-8E84-14E2DEC784C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91124504-2D76-494F-8E84-14E2DEC784C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{91124504-2D76-494F-8E84-14E2DEC784C8} = {43713D8F-7729-4641-9D0A-DFB3211890A1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81AF9707-693C-4FE1-8039-C67D45751795}
+	EndGlobalSection
+EndGlobal

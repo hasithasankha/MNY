@@ -1,0 +1,48 @@
+﻿@page "/Test/AddTest"
+@using MNY.Data
+@using MNY.Model;
+@inject TestService testService
+@inject NavigationManager navManger;
+
+
+<h1>Add Test</h1>
+<hr />
+<form>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="Test_Name" class="control-label">Test_Name</label>
+                <input form="Test_Name" class="form-control" placeholder="Enter Test Name" @bind="objTest.Test_Name" />
+            </div>
+
+            <div class="form-group">
+                <label for="Test_Description" class="control-label">Test_Description</label>
+                <input form="Test_Description" class="form-control" placeholder="Enter Description" @bind="objTest.Test_Description" />
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <input type="button" class="btn btn-primary" @onclick="@AddTestDetail" value="Save" />
+            <input type="button" class="btn btn-danger" @onclick="@Cancel" value="Cancel" />
+        </div>
+    </div>
+</form>
+
+
+
+@code {
+    Test objTest = new Test();
+
+    protected void AddTestDetail()
+    {
+        testService.AddTestDetails(objTest);
+        navManger.NavigateTo("Test/testList");
+    }
+    void Cancel()
+    {
+        navManger.NavigateTo("Test/testList");
+    }
+}

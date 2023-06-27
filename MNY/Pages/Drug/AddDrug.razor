@@ -1,0 +1,52 @@
+﻿@page "/Drug/AddDrug"
+@using MNY.Data
+@using MNY.Model;
+@inject DrugService drugService
+@inject NavigationManager navManger;
+
+
+<h1>Add Drug</h1>
+<hr />
+<form>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="Trde_Name" class="control-label">Trde_Name</label>
+                <input form="Trde_Name" class="form-control" placeholder="Enter Drug Name" @bind="objDrug.Trde_Name" />
+            </div>
+
+            <div class="form-group">
+                <label for="Generic_Name" class="control-label">Generic_Name</label>
+                <input form="Generic_Name" class="form-control" placeholder="Enter Genaric" @bind="objDrug.Generic_Name" />
+            </div>
+
+            <div class="form-group">
+                <label for="Note" class="control-label" >Note</label>
+                <input form="Note" class="form-control" placeholder="Enter Drugs Note" @bind="objDrug.Note" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <input type="button" class="btn btn-primary" @onclick="@AddDrugDetail" value="Save" />
+            <input type="button" class="btn btn-danger" @onclick="@Cancel" value="Cancel" />
+        </div>
+    </div>
+</form>
+
+
+
+@code {
+    Drug objDrug = new Drug();
+
+    protected void AddDrugDetail()
+    {
+        drugService.AddDrugDetails(objDrug);
+        navManger.NavigateTo("Drug/drugList");
+    }
+    void Cancel()
+    {
+        navManger.NavigateTo("Drug/drugList");
+    }
+}
