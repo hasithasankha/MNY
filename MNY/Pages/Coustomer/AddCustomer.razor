@@ -7,7 +7,7 @@
 
 <h1>Add Customer</h1>
 <hr/>
-<EditForm Model="@objCustomer" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="Cancel">
+<EditForm Model="@objCustomer" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
     <div class="row">
         <div class="col-md-8">
@@ -41,7 +41,7 @@
         <div class="col-md-4">
             <button type="submit" class="btn btn-info" Style="margin-top:10px">Save</button>
        
-            <button type="reset" class="btn btn-info" Style="margin-top:10px">Cancel</button>
+            <button type="reset" class="btn btn-danger" Style="margin-top:10px" @onclick="@Cancel">Cancel</button>
           </div>
     </div>
 
@@ -85,7 +85,7 @@
     {
         displayValidationErrorMessages = true;
         displayUserAddedToDB = false;
-        //navManger.NavigateTo("Coustomer/customerList");
+        navManger.NavigateTo("Coustomer/customerList");
     }
 }
 
