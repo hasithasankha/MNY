@@ -8,7 +8,7 @@ namespace MNY.Model
     {
         public int Id { get; set; }
 
-        [DisplayName("Resource")]
+        [DisplayName("Name")]
         [Required]
         [StringLength(100)]
         public string Name { get; set; }
