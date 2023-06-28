@@ -7,19 +7,8 @@ namespace MNY.Model
 {
     public class Customer
     {
-        private Customer objCustomer;
-
-        public Customer()
-        {
-        }
-
-        public Customer(Customer objCustomer)
-        {
-            this.objCustomer = objCustomer;
-        }
-
+    
         public int Id { get; set; }
-
 
         [Required(ErrorMessage = "Your Name is required")]
         [StringLength(20, MinimumLength = 3, ErrorMessage = "Last Name cannot have less than 3 characters and more than 20 characters in length")]
@@ -32,6 +21,7 @@ namespace MNY.Model
         [Required(ErrorMessage = "Your Email is required")]
         [EmailAddress]
         public string Email { get; set; }
+
 
     }
 }
