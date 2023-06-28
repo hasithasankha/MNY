@@ -6,10 +6,10 @@ namespace MNY.Model
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter Your Testing Name")]
         public string Test_Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Please Enter Your Testing Description")]
         public string Test_Description { get; set;}
     }
 }

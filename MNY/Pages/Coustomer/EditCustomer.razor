@@ -8,7 +8,7 @@
 
 <h1>Edit Customer</h1>
 <hr />
-<EditForm Model="@objCustomer" OnValidSubmit="@HandleValidSubmit">
+<EditForm Model="@objCustomer" OnValidSubmit="@UpdateCustomer">
     <DataAnnotationsValidator />
     <div class="row">
         <input type="hidden" @bind="objCustomer.Id" />
@@ -68,7 +68,7 @@
         objCustomer = await Task.Run(() => customerService.GetCustomerById(Convert.ToInt32(CurrentId)));
     }
   
-    private void HandleValidSubmit(EditContext context)
+    private void UpdateCustomer(EditContext context)
     {
 
         displayValidationErrorMessages = false;

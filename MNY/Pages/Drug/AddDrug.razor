@@ -7,7 +7,7 @@
 
 <h1>Add Drug</h1>
 <hr />
-<EditForm Model="@objDrug" OnInvalidSubmit="@HandleValidSubmit">
+<EditForm Model="@objDrug" OnValidSubmit="@AddDrugDetails">
     <DataAnnotationsValidator />
 
     <div class="row">
@@ -48,7 +48,7 @@
     Drug objDrug = new Drug();
     bool displayValidationErrorMessages = false;
     bool displayUserAddedToDB = false;
-    private void HandleValidSubmit(EditContext context)
+    private void AddDrugDetails(EditContext context)
     {
 
         displayValidationErrorMessages = false;
@@ -60,6 +60,6 @@
     {
         displayValidationErrorMessages = true;
         displayUserAddedToDB = false;
-        navManger.NavigateTo("Drug/drugList");
+        navManger.NavigateTo("Coustomer/customerList");
     }
 }

@@ -7,7 +7,7 @@
 
 <h1>Add Customer</h1>
 <hr/>
-<EditForm Model="@objCustomer" OnValidSubmit="@HandleValidSubmit">
+<EditForm Model="@objCustomer" OnValidSubmit="@AddCustomerDetails">
     <DataAnnotationsValidator />
     <div class="row">
         <div class="col-md-8">
@@ -73,7 +73,7 @@
     Customer objCustomer = new Customer();
     bool displayValidationErrorMessages = false;
     bool displayUserAddedToDB = false;
-    private void HandleValidSubmit(EditContext context)
+    private void AddCustomerDetails(EditContext context)
     {
         
         displayValidationErrorMessages = false;
