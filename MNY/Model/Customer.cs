@@ -21,15 +21,15 @@ namespace MNY.Model
         public int Id { get; set; }
 
 
-        [Required(ErrorMessage = "Name is required")]
+        [Required(ErrorMessage = "Your Name is required")]
         [StringLength(20, MinimumLength = 3, ErrorMessage = "Last Name cannot have less than 3 characters and more than 20 characters in length")]
         public string Name { get; set; }
        
-        [Required(ErrorMessage = "Address is required")]
+        [Required(ErrorMessage = "Your Address is required")]
         public string Address { get; set; }
 
 
-        [Required(ErrorMessage = "Email is required")]
+        [Required(ErrorMessage = "Your Email is required")]
         [EmailAddress]
         public string Email { get; set; }
 

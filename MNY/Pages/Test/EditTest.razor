@@ -7,7 +7,8 @@
 
 <h1>Edit Test</h1>
 <hr />
-<form>
+<EditForm Model="@objTest" OnValidSubmit="@UpdateTest">
+    <DataAnnotationsValidator/>
     <div class="row">
         <input type="hidden" @bind="objTest.Id" />
 
@@ -16,11 +17,13 @@
             <div class="form-group">
                 <label for="Test_Name" class="control-label">Test_Name</label>
                 <input form="Test_Name" class="form-control" @bind="objTest.Test_Name" />
+                <ValidationMessage For="@(() => objTest.Test_Name)"/>
             </div>
 
             <div class="form-group">
                 <label for="Test_Description" class="control-label">Test_Description</label>
                 <input form="Test_Description" class="form-control" @bind="objTest.Test_Description" />
+                <ValidationMessage For="@(() => objTest.Test_Description)"/>
             </div>
 
            
@@ -29,11 +32,12 @@
 
     <div class="row">
         <div class="col-md-4">
-            <input type="button" class="btn btn-primary" @onclick="@UpdateTest" value="Update" />
-            <input type="button" class="btn btn-danger" @onclick="@Cancel" value="Cancel" />
+            <button type="submit" class="btn btn-info" Style="margin-top:10px">Update</button>
+
+            <button type="reset" class="btn btn-danger" Style="margin-top:10px" @onclick="@Cancel">Cancel</button>
         </div>
     </div>
-</form>
+</EditForm>
 
 
 
@@ -42,6 +46,8 @@
     public string CurrentId { get; set; }
 
     Test objTest = new Test();
+    bool displayValidationErrorMessages = false;
+    bool displayUserAddedToDB = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -51,11 +57,15 @@
 
     protected void UpdateTest()
     {
+        displayUserAddedToDB = false;
+        displayValidationErrorMessages = false;
         testService.UpdateTest(objTest);
         navManger.NavigateTo("Test/testList");
     }
     void Cancel()
     {
+        displayUserAddedToDB = false;
+        displayValidationErrorMessages = false;
         navManger.NavigateTo("Test/testList");
     }
 }
