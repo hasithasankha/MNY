@@ -56,12 +56,14 @@
 
 
 @code {
+
     [Parameter]
     public string CurrentId { get; set; }
 
     Customer objCustomer = new Customer();
     bool displayValidationErrorMessages = false;
     bool displayUserAddedToDB = false;
+
 
     protected override async Task OnInitializedAsync()
     {
